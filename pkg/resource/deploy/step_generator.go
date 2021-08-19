@@ -1362,7 +1362,9 @@ func (sg *stepGenerator) addDependency(deps urnSet, res *resource.State) {
 }
 
 // expandDependencies expands the given slice of Resources into a set of URNs.
-func (sg *stepGenerator) expandDependencies(resURN resource.URN, declaredDeps []resource.URN) ([]resource.URN, result.Result) {
+func (sg *stepGenerator) expandDependencies(resURN resource.URN,
+	declaredDeps []resource.URN) ([]resource.URN, result.Result) {
+
 	expandedDeps := urnSet{}
 	for _, urn := range declaredDeps {
 		res, ok := sg.deployment.news.get(urn)
