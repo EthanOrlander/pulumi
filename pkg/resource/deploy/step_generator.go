@@ -1384,10 +1384,13 @@ func (sg *stepGenerator) expandDependencies(resURN resource.URN,
 	expandedDeps := urnSet{}
 	for _, urn := range declaredDeps {
 		res, ok := sg.deployment.news.get(urn)
-		if !ok {
+		if ok {
+			sg.addDependency(expandedDeps, res)
+		}
+		if _, isRead := sg.reads[urn]; !isRead {
 			return nil, result.Errorf("resource %v has a dependency on unknown resource %v", resURN, urn)
 		}
-		sg.addDependency(expandedDeps, res)
+		expandedDeps.add(urn)
 	}
 	return expandedDeps.sortedValues(), nil
 }

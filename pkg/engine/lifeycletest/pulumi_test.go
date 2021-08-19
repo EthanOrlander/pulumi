@@ -2840,3 +2840,30 @@ func TestMissingParent(t *testing.T) {
 	}}
 	p.Run(t, nil)
 }
+
+func TestReadDependency(t *testing.T) {
+	loaders := []*deploytest.ProviderLoader{
+		deploytest.NewProviderLoader("pkgA", semver.MustParse("1.0.0"), func() (plugin.Provider, error) {
+			return &deploytest.Provider{}, nil
+		}),
+	}
+
+	program := deploytest.NewLanguageRuntime(func(_ plugin.RunInfo, monitor *deploytest.ResourceMonitor) error {
+		readURN, _, err := monitor.ReadResource("pkgA:m:typA", "read", "idA", "", nil, "", "")
+		require.NoError(t, err)
+
+		_, _, _, err = monitor.RegisterResource("pkgA:m:typA", "child", true, deploytest.ResourceOptions{
+			Dependencies: []resource.URN{readURN},
+		})
+		assert.NoError(t, err)
+
+		return nil
+	})
+
+	host := deploytest.NewPluginHost(nil, nil, program, loaders...)
+	p := &TestPlan{
+		Options: UpdateOptions{Host: host},
+		Steps:   MakeBasicLifecycleSteps(t, 3),
+	}
+	p.Run(t, nil)
+}
