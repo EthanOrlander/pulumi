@@ -87,10 +87,29 @@ func (sg *stepGenerator) Errored() bool {
 	return sg.sawError
 }
 
+func (sg *stepGenerator) generateURN(parent resource.URN, typ tokens.Type,
+	name tokens.QName) (resource.URN, bool) {
+
+	urn := sg.deployment.generateURN(parent, typ, name)
+
+	duplicate := sg.urns[urn]
+	if duplicate {
+		// TODO[pulumi/pulumi-framework#19]: improve this error message!
+		sg.deployment.Diag().Errorf(diag.GetDuplicateResourceURNError(urn), urn)
+	}
+	sg.urns[urn] = true
+
+	return urn, !duplicate
+}
+
 // GenerateReadSteps is responsible for producing one or more steps required to service
 // a ReadResourceEvent coming from the language host.
 func (sg *stepGenerator) GenerateReadSteps(event ReadResourceEvent) ([]Step, result.Result) {
-	urn := sg.deployment.generateURN(event.Parent(), event.Type(), event.Name())
+	urn, valid := sg.generateURN(event.Parent(), event.Type(), event.Name())
+	if !valid {
+		return nil, result.Bail()
+	}
+
 	newState := resource.NewState(event.Type(),
 		urn,
 		true,  /*custom*/
@@ -209,13 +228,10 @@ func (sg *stepGenerator) generateSteps(event RegisterResourceEvent) ([]Step, res
 
 	goal := event.Goal()
 	// Generate a URN for this new resource, confirm we haven't seen it before in this deployment.
-	urn := sg.deployment.generateURN(goal.Parent, goal.Type, goal.Name)
-	if sg.urns[urn] {
+	urn, ok := sg.generateURN(goal.Parent, goal.Type, goal.Name)
+	if !ok {
 		invalid = true
-		// TODO[pulumi/pulumi-framework#19]: improve this error message!
-		sg.deployment.Diag().Errorf(diag.GetDuplicateResourceURNError(urn), urn)
 	}
-	sg.urns[urn] = true
 
 	// Check for an old resource so that we can figure out if this is a create, delete, etc., and/or
 	// to diff.  We look up first by URN and then by any provided aliases.  If it is found using an
