@@ -36,6 +36,8 @@ import (
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 
+	"github.com/EthanOrlander/genFigSpec"
+
 	"github.com/pulumi/pulumi/pkg/v3/backend/display"
 	"github.com/pulumi/pulumi/pkg/v3/backend/filestate"
 	"github.com/pulumi/pulumi/pkg/v3/backend/httpstate"
@@ -212,6 +214,8 @@ func NewPulumiCmd() *cobra.Command {
 	// Less common, and thus hidden, commands:
 	cmd.AddCommand(newGenCompletionCmd(cmd))
 	cmd.AddCommand(newGenMarkdownCmd(cmd))
+
+	cmd.AddCommand(genFigSpec.GenFigSpec)
 
 	// We have a set of commands that are still experimental and that are hidden unless PULUMI_EXPERIMENTAL is set
 	// to true.
