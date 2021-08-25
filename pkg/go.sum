@@ -100,8 +100,10 @@ github.com/Azure/go-autorest/tracing v0.6.0/go.mod h1:+vhtPC754Xsa23ID7GlGsrdKBp
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
 github.com/DataDog/datadog-go v3.2.0+incompatible/go.mod h1:LButxg5PwREeZtORoXG3tL4fMGNddJ+vMq1mwgfaqoQ=
-github.com/EthanOrlander/genFigSpec v0.0.0-20210823152056-cf48a12c6fd4 h1:eend3Cf0+4QqK+WAEBdc1ShpmErRkbHFn4LXd6XcmSQ=
-github.com/EthanOrlander/genFigSpec v0.0.0-20210823152056-cf48a12c6fd4/go.mod h1:6EMI3e9aY1QRQjjWq9KgigOBsVI/6Uf0NzMmsfKY2pk=
+github.com/EthanOrlander/genFigSpec v0.0.0-20210823161104-ce6160e0ff1e h1:9pzJwELm+mjss6vrj8jfoIl1LLZPnQj0MRI3beciF+I=
+github.com/EthanOrlander/genFigSpec v0.0.0-20210823161104-ce6160e0ff1e/go.mod h1:6EMI3e9aY1QRQjjWq9KgigOBsVI/6Uf0NzMmsfKY2pk=
+github.com/EthanOrlander/genFigSpec v0.0.0-20210825173619-f8073eb6aa11 h1:a/+PgZNpI2Ihy5R8rbb/wt+GMwS+1lrQ/LGll+cSUgs=
+github.com/EthanOrlander/genFigSpec v0.0.0-20210825173619-f8073eb6aa11/go.mod h1:6EMI3e9aY1QRQjjWq9KgigOBsVI/6Uf0NzMmsfKY2pk=
 github.com/GoogleCloudPlatform/cloudsql-proxy v1.22.0/go.mod h1:mAm5O/zik2RFmcpigNjg6nMotDL8ZXJaxKzgGVcSMFA=
 github.com/Microsoft/go-winio v0.4.14/go.mod h1:qXqCSQ3Xa7+6tgxaGTIe4Kpcdsi+P8jBhyzoq1bpyYA=
 github.com/Microsoft/go-winio v0.4.15-0.20190919025122-fc70bd9a86b5/go.mod h1:tTuCMEN+UleMWgg9dVx4Hu52b1bJo+59jBh3ajtinzw=

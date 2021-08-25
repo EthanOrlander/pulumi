@@ -212,6 +212,7 @@ func NewPulumiCmd() *cobra.Command {
 	cmd.AddCommand(newConsoleCmd())
 
 	// Less common, and thus hidden, commands:
+	cmd.CompletionOptions.DisableDefaultCmd = true
 	cmd.AddCommand(newGenCompletionCmd(cmd))
 	cmd.AddCommand(newGenMarkdownCmd(cmd))
 
