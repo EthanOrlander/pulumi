@@ -104,6 +104,7 @@ github.com/EthanOrlander/genFigSpec v0.0.0-20210822224520-7c54b101d08c/go.mod h1
 github.com/EthanOrlander/genFigSpec v0.0.0-20210823142348-63d7fb5aebed/go.mod h1:aQVU3UfcECt4AvCtiqIw4uecVIgAZ+u3syG+nScOesk=
 github.com/EthanOrlander/genFigSpec v0.0.0-20210823152056-cf48a12c6fd4/go.mod h1:6EMI3e9aY1QRQjjWq9KgigOBsVI/6Uf0NzMmsfKY2pk=
 github.com/EthanOrlander/genFigSpec v0.0.0-20210823161104-ce6160e0ff1e/go.mod h1:6EMI3e9aY1QRQjjWq9KgigOBsVI/6Uf0NzMmsfKY2pk=
+github.com/EthanOrlander/genFigSpec v0.0.0-20210826010157-1676becced99/go.mod h1:6EMI3e9aY1QRQjjWq9KgigOBsVI/6Uf0NzMmsfKY2pk=
 github.com/GoogleCloudPlatform/cloudsql-proxy v1.22.0/go.mod h1:mAm5O/zik2RFmcpigNjg6nMotDL8ZXJaxKzgGVcSMFA=
 github.com/Microsoft/go-winio v0.4.14/go.mod h1:qXqCSQ3Xa7+6tgxaGTIe4Kpcdsi+P8jBhyzoq1bpyYA=
 github.com/Microsoft/go-winio v0.4.15-0.20190919025122-fc70bd9a86b5/go.mod h1:tTuCMEN+UleMWgg9dVx4Hu52b1bJo+59jBh3ajtinzw=
