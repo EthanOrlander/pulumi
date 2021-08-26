@@ -104,6 +104,8 @@ github.com/EthanOrlander/genFigSpec v0.0.0-20210823161104-ce6160e0ff1e h1:9pzJwE
 github.com/EthanOrlander/genFigSpec v0.0.0-20210823161104-ce6160e0ff1e/go.mod h1:6EMI3e9aY1QRQjjWq9KgigOBsVI/6Uf0NzMmsfKY2pk=
 github.com/EthanOrlander/genFigSpec v0.0.0-20210825173619-f8073eb6aa11 h1:a/+PgZNpI2Ihy5R8rbb/wt+GMwS+1lrQ/LGll+cSUgs=
 github.com/EthanOrlander/genFigSpec v0.0.0-20210825173619-f8073eb6aa11/go.mod h1:6EMI3e9aY1QRQjjWq9KgigOBsVI/6Uf0NzMmsfKY2pk=
+github.com/EthanOrlander/genFigSpec v0.0.0-20210826010157-1676becced99 h1:Mw2Ve2+FtRlHw/em2kd598nPPsI8XJFovsjEp9nJ8hU=
+github.com/EthanOrlander/genFigSpec v0.0.0-20210826010157-1676becced99/go.mod h1:6EMI3e9aY1QRQjjWq9KgigOBsVI/6Uf0NzMmsfKY2pk=
 github.com/GoogleCloudPlatform/cloudsql-proxy v1.22.0/go.mod h1:mAm5O/zik2RFmcpigNjg6nMotDL8ZXJaxKzgGVcSMFA=
 github.com/Microsoft/go-winio v0.4.14/go.mod h1:qXqCSQ3Xa7+6tgxaGTIe4Kpcdsi+P8jBhyzoq1bpyYA=
 github.com/Microsoft/go-winio v0.4.15-0.20190919025122-fc70bd9a86b5/go.mod h1:tTuCMEN+UleMWgg9dVx4Hu52b1bJo+59jBh3ajtinzw=

@@ -7,6 +7,57 @@ const completionSpec: Fig.Spec = {
       description: "Cancel a stack's currently running update, if any",
       options: [
         {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
+        {
           name: ["--stack", "-s"],
           description:
             "The name of the stack to operate on. Defaults to the current stack",
@@ -28,6 +79,75 @@ const completionSpec: Fig.Spec = {
           description: "Copy config to another stack",
           options: [
             {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--config-file"],
+              description:
+                "Use the configuration values in the specified file rather than detecting the file name",
+              args: [{ name: "config-file" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--stack", "-s"],
+              description:
+                "The name of the stack to operate on. Defaults to the current stack",
+              args: [{ name: "stack" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
+            {
               name: ["--dest", "-d"],
               description: "The name of the new stack to copy the config to",
               args: [{ name: "dest" }],
@@ -43,6 +163,75 @@ const completionSpec: Fig.Spec = {
           name: ["get"],
           description: "Get a single configuration value",
           options: [
+            {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--config-file"],
+              description:
+                "Use the configuration values in the specified file rather than detecting the file name",
+              args: [{ name: "config-file" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--stack", "-s"],
+              description:
+                "The name of the stack to operate on. Defaults to the current stack",
+              args: [{ name: "stack" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
             { name: ["--json", "-j"], description: "Emit output as JSON" },
             {
               name: ["--path"],
@@ -57,6 +246,75 @@ const completionSpec: Fig.Spec = {
             "Update the local configuration based on the most recent deployment of the stack",
           options: [
             {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--config-file"],
+              description:
+                "Use the configuration values in the specified file rather than detecting the file name",
+              args: [{ name: "config-file" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--stack", "-s"],
+              description:
+                "The name of the stack to operate on. Defaults to the current stack",
+              args: [{ name: "stack" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
+            {
               name: ["--force", "-f"],
               description:
                 "Overwrite configuration file, if it exists, without creating a backup",
@@ -67,6 +325,75 @@ const completionSpec: Fig.Spec = {
           name: ["rm"],
           description: "Remove configuration value",
           options: [
+            {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--config-file"],
+              description:
+                "Use the configuration values in the specified file rather than detecting the file name",
+              args: [{ name: "config-file" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--stack", "-s"],
+              description:
+                "The name of the stack to operate on. Defaults to the current stack",
+              args: [{ name: "stack" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
             {
               name: ["--path"],
               description:
@@ -79,6 +406,75 @@ const completionSpec: Fig.Spec = {
           description: "Remove multiple configuration values",
           options: [
             {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--config-file"],
+              description:
+                "Use the configuration values in the specified file rather than detecting the file name",
+              args: [{ name: "config-file" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--stack", "-s"],
+              description:
+                "The name of the stack to operate on. Defaults to the current stack",
+              args: [{ name: "stack" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
+            {
               name: ["--path"],
               description:
                 "Parse the keys as paths in a map or list rather than raw strings",
@@ -89,6 +485,75 @@ const completionSpec: Fig.Spec = {
           name: ["set"],
           description: "Set configuration value",
           options: [
+            {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--config-file"],
+              description:
+                "Use the configuration values in the specified file rather than detecting the file name",
+              args: [{ name: "config-file" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--stack", "-s"],
+              description:
+                "The name of the stack to operate on. Defaults to the current stack",
+              args: [{ name: "stack" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
             {
               name: ["--path"],
               description:
@@ -110,6 +575,75 @@ const completionSpec: Fig.Spec = {
           description: "Set multiple configuration values",
           options: [
             {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--config-file"],
+              description:
+                "Use the configuration values in the specified file rather than detecting the file name",
+              args: [{ name: "config-file" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--stack", "-s"],
+              description:
+                "The name of the stack to operate on. Defaults to the current stack",
+              args: [{ name: "stack" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
+            {
               name: ["--path"],
               description:
                 "Parse the keys as paths in a map or list rather than raw strings",
@@ -130,6 +664,57 @@ const completionSpec: Fig.Spec = {
         },
       ],
       options: [
+        {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
         {
           name: ["--config-file"],
           description:
@@ -155,6 +740,57 @@ const completionSpec: Fig.Spec = {
       description: "Opens the current stack in the Pulumi Console",
       options: [
         {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
+        {
           name: ["--stack", "-s"],
           description: "The name of the stack to view",
           args: [{ name: "stack" }],
@@ -162,9 +798,123 @@ const completionSpec: Fig.Spec = {
       ],
     },
     {
+      name: ["convert-trace"],
+      description:
+        "Convert a trace from the Pulumi CLI to Google's pprof format",
+      options: [
+        {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
+        {
+          name: ["--granularity", "-g"],
+          description: "the sample granularity",
+          args: [{ name: "granularity", default: "500ms" }],
+        },
+      ],
+    },
+    {
       name: ["destroy"],
       description: "Destroy an existing stack and its resources",
       options: [
+        {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
         {
           name: ["--config-file"],
           description:
@@ -262,9 +1012,295 @@ const completionSpec: Fig.Spec = {
       ],
     },
     {
+      name: ["gen-completion"],
+      description: "Generate completion scripts for the Pulumi CLI",
+      options: [
+        {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
+      ],
+    },
+    {
+      name: ["gen-markdown"],
+      description:
+        "Generate Pulumi CLI documentation as Markdown (one file per command)",
+      options: [
+        {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
+      ],
+    },
+    {
+      name: ["genFigSpec"],
+      description: "Generate a fig spec",
+      options: [
+        {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
+        { name: ["--help", "-h"], description: "help for genFigSpec" },
+        {
+          name: ["--include-hidden"],
+          description:
+            "Include hidden commands in generated Fig autocomplete spec",
+        },
+      ],
+    },
+    {
+      name: ["help"],
+      description: "Help about any command",
+      options: [
+        {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
+      ],
+    },
+    {
       name: ["import"],
       description: "Import resources into an existing stack",
       options: [
+        {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
         {
           name: ["--config-file"],
           description:
@@ -364,6 +1400,57 @@ const completionSpec: Fig.Spec = {
       description: "Log in to the Pulumi service",
       options: [
         {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
+        {
           name: ["--cloud-url", "-c"],
           description: "A cloud URL to log in to",
           args: [{ name: "cloud-url" }],
@@ -378,6 +1465,57 @@ const completionSpec: Fig.Spec = {
       name: ["logout"],
       description: "Log out of the Pulumi service",
       options: [
+        {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
         { name: ["--all"], description: "Logout of all backends" },
         {
           name: ["--cloud-url", "-c"],
@@ -391,6 +1529,57 @@ const completionSpec: Fig.Spec = {
       name: ["logs"],
       description: "[PREVIEW] Show aggregated resource logs for a stack",
       options: [
+        {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
         {
           name: ["--config-file"],
           description:
@@ -426,6 +1615,57 @@ const completionSpec: Fig.Spec = {
       name: ["new"],
       description: "Create a new Pulumi project",
       options: [
+        {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
         {
           name: ["--config", "-c"],
           description: "Config to save",
@@ -497,6 +1737,63 @@ const completionSpec: Fig.Spec = {
           description: "Install one or more plugins",
           options: [
             {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
+            {
               name: ["--exact"],
               description:
                 "Force installation of an exact version match (usually >= is accepted)",
@@ -522,6 +1819,63 @@ const completionSpec: Fig.Spec = {
           name: ["ls"],
           description: "List plugins",
           options: [
+            {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
             { name: ["--json", "-j"], description: "Emit output as JSON" },
             {
               name: ["--project", "-p"],
@@ -533,6 +1887,63 @@ const completionSpec: Fig.Spec = {
           name: ["rm"],
           description: "Remove one or more plugins from the download cache",
           options: [
+            {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
             { name: ["--all", "-a"], description: "Remove all plugins" },
             {
               name: ["--yes", "-y"],
@@ -540,6 +1951,59 @@ const completionSpec: Fig.Spec = {
                 "Skip confirmation prompts, and proceed with removal anyway",
             },
           ],
+        },
+      ],
+      options: [
+        {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
         },
       ],
     },
@@ -551,6 +2015,63 @@ const completionSpec: Fig.Spec = {
           name: ["disable"],
           description: "Disable a Policy Pack for a Pulumi organization",
           options: [
+            {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
             {
               name: ["--policy-group"],
               description:
@@ -569,6 +2090,63 @@ const completionSpec: Fig.Spec = {
           name: ["enable"],
           description: "Enable a Policy Pack for a Pulumi organization",
           options: [
+            {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
             {
               name: ["--config"],
               description:
@@ -591,8 +2169,124 @@ const completionSpec: Fig.Spec = {
               name: ["ls"],
               description: "List all Policy Groups for a Pulumi organization",
               options: [
+                {
+                  name: ["--color"],
+                  description:
+                    "Colorize output. Choices are: always, never, raw, auto",
+                  args: [{ name: "color", default: "auto" }],
+                },
+                {
+                  name: ["--cwd", "-C"],
+                  description:
+                    "Run pulumi as if it had been started in another directory",
+                  args: [{ name: "cwd" }],
+                },
+                {
+                  name: ["--disable-integrity-checking"],
+                  description: "Disable integrity checking of checkpoint files",
+                },
+                {
+                  name: ["--emoji", "-e"],
+                  description: "Enable emojis in the output",
+                },
+                {
+                  name: ["--logflow"],
+                  description:
+                    "Flow log settings to child processes (like plugins)",
+                },
+                {
+                  name: ["--logtostderr"],
+                  description: "Log to stderr instead of to files",
+                },
+                {
+                  name: ["--non-interactive"],
+                  description: "Disable interactive mode for all commands",
+                },
+                {
+                  name: ["--profiling"],
+                  description:
+                    "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+                  args: [{ name: "profiling" }],
+                },
+                {
+                  name: ["--tracing"],
+                  description:
+                    "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+                  args: [{ name: "tracing" }],
+                },
+                {
+                  name: ["--tracing-header"],
+                  description:
+                    "Include the tracing header with the given contents.",
+                  args: [{ name: "tracing-header" }],
+                },
+                {
+                  name: ["--verbose", "-v"],
+                  description:
+                    "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+                  args: [{ name: "verbose", default: "0" }],
+                },
                 { name: ["--json", "-j"], description: "Emit output as JSON" },
               ],
+            },
+          ],
+          options: [
+            {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
             },
           ],
         },
@@ -600,6 +2294,63 @@ const completionSpec: Fig.Spec = {
           name: ["ls"],
           description: "List all Policy Packs for a Pulumi organization",
           options: [
+            {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
             { name: ["--json", "-j"], description: "Emit output as JSON" },
           ],
         },
@@ -607,6 +2358,63 @@ const completionSpec: Fig.Spec = {
           name: ["new"],
           description: "Create a new Pulumi Policy Pack",
           options: [
+            {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
             {
               name: ["--dir"],
               description:
@@ -633,11 +2441,127 @@ const completionSpec: Fig.Spec = {
         {
           name: ["publish"],
           description: "Publish a Policy Pack to the Pulumi service",
+          options: [
+            {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
+          ],
         },
         {
           name: ["rm"],
           description: "Removes a Policy Pack from a Pulumi organization",
           options: [
+            {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
             {
               name: ["--yes", "-y"],
               description:
@@ -650,6 +2574,63 @@ const completionSpec: Fig.Spec = {
           description: "Validate a Policy Pack configuration",
           options: [
             {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
+            {
               name: ["--config"],
               description:
                 "The file path for the Policy Pack configuration file",
@@ -658,11 +2639,115 @@ const completionSpec: Fig.Spec = {
           ],
         },
       ],
+      options: [
+        {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
+      ],
     },
     {
       name: ["pre", "preview"],
       description: "Show a preview of updates to a stack's resources",
       options: [
+        {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
         {
           name: ["--client"],
           description:
@@ -808,9 +2893,123 @@ const completionSpec: Fig.Spec = {
       ],
     },
     {
+      name: ["query"],
+      description: "Run query program against cloud resources",
+      options: [
+        {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
+        {
+          name: ["--stack", "-s"],
+          description:
+            "The name of the stack to operate on. Defaults to the current stack",
+          args: [{ name: "stack" }],
+        },
+      ],
+    },
+    {
       name: ["refresh"],
       description: "Refresh the resources in a stack",
       options: [
+        {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
         {
           name: ["--config-file"],
           description:
@@ -905,11 +3104,139 @@ const completionSpec: Fig.Spec = {
         {
           name: ["change-secrets-provider"],
           description: "Change the secrets provider for the current stack",
+          options: [
+            {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--stack", "-s"],
+              description:
+                "The name of the stack to operate on. Defaults to the current stack",
+              args: [{ name: "stack" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
+          ],
         },
         {
           name: ["export"],
           description: "Export a stack's deployment to standard out",
           options: [
+            {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--stack", "-s"],
+              description:
+                "The name of the stack to operate on. Defaults to the current stack",
+              args: [{ name: "stack" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
             {
               name: ["--file"],
               description: "A filename to write stack output to",
@@ -932,6 +3259,69 @@ const completionSpec: Fig.Spec = {
           name: ["graph"],
           description: "Export a stack's dependency graph to a file",
           options: [
+            {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--stack", "-s"],
+              description:
+                "The name of the stack to operate on. Defaults to the current stack",
+              args: [{ name: "stack" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
             {
               name: ["--dependency-edge-color"],
               description: "Sets the color of dependency edges in the graph",
@@ -958,6 +3348,69 @@ const completionSpec: Fig.Spec = {
           name: ["hist", "history"],
           description: "[PREVIEW] Display history for a stack",
           options: [
+            {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--stack", "-s"],
+              description:
+                "The name of the stack to operate on. Defaults to the current stack",
+              args: [{ name: "stack" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
             {
               name: ["--full-dates"],
               description: "Show full dates, instead of relative dates",
@@ -987,6 +3440,69 @@ const completionSpec: Fig.Spec = {
             "Import a deployment from standard in into an existing stack",
           options: [
             {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--stack", "-s"],
+              description:
+                "The name of the stack to operate on. Defaults to the current stack",
+              args: [{ name: "stack" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
+            {
               name: ["--file"],
               description: "A filename to read stack input from",
               args: [{ name: "file" }],
@@ -1004,6 +3520,69 @@ const completionSpec: Fig.Spec = {
             "Create an empty stack with the given name, ready for updates",
           options: [
             {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--stack", "-s"],
+              description:
+                "The name of the stack to operate on. Defaults to the current stack",
+              args: [{ name: "stack" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
+            {
               name: ["--copy-config-from"],
               description: "The name of the stack to copy existing config from",
               args: [{ name: "copy-config-from" }],
@@ -1020,6 +3599,69 @@ const completionSpec: Fig.Spec = {
           name: ["ls"],
           description: "List stacks",
           options: [
+            {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--stack", "-s"],
+              description:
+                "The name of the stack to operate on. Defaults to the current stack",
+              args: [{ name: "stack" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
             {
               name: ["--all", "-a"],
               description:
@@ -1050,6 +3692,69 @@ const completionSpec: Fig.Spec = {
           name: ["output"],
           description: "Show a stack's output properties",
           options: [
+            {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--stack", "-s"],
+              description:
+                "The name of the stack to operate on. Defaults to the current stack",
+              args: [{ name: "stack" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
             { name: ["--json", "-j"], description: "Emit output as JSON" },
             {
               name: ["--show-secrets"],
@@ -1058,11 +3763,142 @@ const completionSpec: Fig.Spec = {
             },
           ],
         },
-        { name: ["rename"], description: "Rename an existing stack" },
+        {
+          name: ["rename"],
+          description: "Rename an existing stack",
+          options: [
+            {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--stack", "-s"],
+              description:
+                "The name of the stack to operate on. Defaults to the current stack",
+              args: [{ name: "stack" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
+          ],
+        },
         {
           name: ["rm"],
           description: "Remove a stack and its configuration",
           options: [
+            {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--stack", "-s"],
+              description:
+                "The name of the stack to operate on. Defaults to the current stack",
+              args: [{ name: "stack" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
             {
               name: ["--force", "-f"],
               description:
@@ -1085,6 +3921,69 @@ const completionSpec: Fig.Spec = {
           description: "Switch the current workspace to the given stack",
           options: [
             {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--stack", "-s"],
+              description:
+                "The name of the stack to operate on. Defaults to the current stack",
+              args: [{ name: "stack" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
+            {
               name: ["--create", "-c"],
               description: "If selected stack does not exist, create it",
             },
@@ -1100,20 +3999,403 @@ const completionSpec: Fig.Spec = {
           name: ["tag"],
           description: "Manage stack tags",
           subcommands: [
-            { name: ["get"], description: "Get a single stack tag value" },
+            {
+              name: ["get"],
+              description: "Get a single stack tag value",
+              options: [
+                {
+                  name: ["--color"],
+                  description:
+                    "Colorize output. Choices are: always, never, raw, auto",
+                  args: [{ name: "color", default: "auto" }],
+                },
+                {
+                  name: ["--cwd", "-C"],
+                  description:
+                    "Run pulumi as if it had been started in another directory",
+                  args: [{ name: "cwd" }],
+                },
+                {
+                  name: ["--disable-integrity-checking"],
+                  description: "Disable integrity checking of checkpoint files",
+                },
+                {
+                  name: ["--emoji", "-e"],
+                  description: "Enable emojis in the output",
+                },
+                {
+                  name: ["--logflow"],
+                  description:
+                    "Flow log settings to child processes (like plugins)",
+                },
+                {
+                  name: ["--logtostderr"],
+                  description: "Log to stderr instead of to files",
+                },
+                {
+                  name: ["--non-interactive"],
+                  description: "Disable interactive mode for all commands",
+                },
+                {
+                  name: ["--profiling"],
+                  description:
+                    "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+                  args: [{ name: "profiling" }],
+                },
+                {
+                  name: ["--stack", "-s"],
+                  description:
+                    "The name of the stack to operate on. Defaults to the current stack",
+                  args: [{ name: "stack" }],
+                },
+                {
+                  name: ["--tracing"],
+                  description:
+                    "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+                  args: [{ name: "tracing" }],
+                },
+                {
+                  name: ["--tracing-header"],
+                  description:
+                    "Include the tracing header with the given contents.",
+                  args: [{ name: "tracing-header" }],
+                },
+                {
+                  name: ["--verbose", "-v"],
+                  description:
+                    "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+                  args: [{ name: "verbose", default: "0" }],
+                },
+              ],
+            },
             {
               name: ["ls"],
               description: "List all stack tags",
               options: [
+                {
+                  name: ["--color"],
+                  description:
+                    "Colorize output. Choices are: always, never, raw, auto",
+                  args: [{ name: "color", default: "auto" }],
+                },
+                {
+                  name: ["--cwd", "-C"],
+                  description:
+                    "Run pulumi as if it had been started in another directory",
+                  args: [{ name: "cwd" }],
+                },
+                {
+                  name: ["--disable-integrity-checking"],
+                  description: "Disable integrity checking of checkpoint files",
+                },
+                {
+                  name: ["--emoji", "-e"],
+                  description: "Enable emojis in the output",
+                },
+                {
+                  name: ["--logflow"],
+                  description:
+                    "Flow log settings to child processes (like plugins)",
+                },
+                {
+                  name: ["--logtostderr"],
+                  description: "Log to stderr instead of to files",
+                },
+                {
+                  name: ["--non-interactive"],
+                  description: "Disable interactive mode for all commands",
+                },
+                {
+                  name: ["--profiling"],
+                  description:
+                    "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+                  args: [{ name: "profiling" }],
+                },
+                {
+                  name: ["--stack", "-s"],
+                  description:
+                    "The name of the stack to operate on. Defaults to the current stack",
+                  args: [{ name: "stack" }],
+                },
+                {
+                  name: ["--tracing"],
+                  description:
+                    "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+                  args: [{ name: "tracing" }],
+                },
+                {
+                  name: ["--tracing-header"],
+                  description:
+                    "Include the tracing header with the given contents.",
+                  args: [{ name: "tracing-header" }],
+                },
+                {
+                  name: ["--verbose", "-v"],
+                  description:
+                    "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+                  args: [{ name: "verbose", default: "0" }],
+                },
                 { name: ["--json", "-j"], description: "Emit output as JSON" },
               ],
             },
-            { name: ["rm"], description: "Remove a stack tag" },
-            { name: ["set"], description: "Set a stack tag" },
+            {
+              name: ["rm"],
+              description: "Remove a stack tag",
+              options: [
+                {
+                  name: ["--color"],
+                  description:
+                    "Colorize output. Choices are: always, never, raw, auto",
+                  args: [{ name: "color", default: "auto" }],
+                },
+                {
+                  name: ["--cwd", "-C"],
+                  description:
+                    "Run pulumi as if it had been started in another directory",
+                  args: [{ name: "cwd" }],
+                },
+                {
+                  name: ["--disable-integrity-checking"],
+                  description: "Disable integrity checking of checkpoint files",
+                },
+                {
+                  name: ["--emoji", "-e"],
+                  description: "Enable emojis in the output",
+                },
+                {
+                  name: ["--logflow"],
+                  description:
+                    "Flow log settings to child processes (like plugins)",
+                },
+                {
+                  name: ["--logtostderr"],
+                  description: "Log to stderr instead of to files",
+                },
+                {
+                  name: ["--non-interactive"],
+                  description: "Disable interactive mode for all commands",
+                },
+                {
+                  name: ["--profiling"],
+                  description:
+                    "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+                  args: [{ name: "profiling" }],
+                },
+                {
+                  name: ["--stack", "-s"],
+                  description:
+                    "The name of the stack to operate on. Defaults to the current stack",
+                  args: [{ name: "stack" }],
+                },
+                {
+                  name: ["--tracing"],
+                  description:
+                    "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+                  args: [{ name: "tracing" }],
+                },
+                {
+                  name: ["--tracing-header"],
+                  description:
+                    "Include the tracing header with the given contents.",
+                  args: [{ name: "tracing-header" }],
+                },
+                {
+                  name: ["--verbose", "-v"],
+                  description:
+                    "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+                  args: [{ name: "verbose", default: "0" }],
+                },
+              ],
+            },
+            {
+              name: ["set"],
+              description: "Set a stack tag",
+              options: [
+                {
+                  name: ["--color"],
+                  description:
+                    "Colorize output. Choices are: always, never, raw, auto",
+                  args: [{ name: "color", default: "auto" }],
+                },
+                {
+                  name: ["--cwd", "-C"],
+                  description:
+                    "Run pulumi as if it had been started in another directory",
+                  args: [{ name: "cwd" }],
+                },
+                {
+                  name: ["--disable-integrity-checking"],
+                  description: "Disable integrity checking of checkpoint files",
+                },
+                {
+                  name: ["--emoji", "-e"],
+                  description: "Enable emojis in the output",
+                },
+                {
+                  name: ["--logflow"],
+                  description:
+                    "Flow log settings to child processes (like plugins)",
+                },
+                {
+                  name: ["--logtostderr"],
+                  description: "Log to stderr instead of to files",
+                },
+                {
+                  name: ["--non-interactive"],
+                  description: "Disable interactive mode for all commands",
+                },
+                {
+                  name: ["--profiling"],
+                  description:
+                    "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+                  args: [{ name: "profiling" }],
+                },
+                {
+                  name: ["--stack", "-s"],
+                  description:
+                    "The name of the stack to operate on. Defaults to the current stack",
+                  args: [{ name: "stack" }],
+                },
+                {
+                  name: ["--tracing"],
+                  description:
+                    "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+                  args: [{ name: "tracing" }],
+                },
+                {
+                  name: ["--tracing-header"],
+                  description:
+                    "Include the tracing header with the given contents.",
+                  args: [{ name: "tracing-header" }],
+                },
+                {
+                  name: ["--verbose", "-v"],
+                  description:
+                    "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+                  args: [{ name: "verbose", default: "0" }],
+                },
+              ],
+            },
+          ],
+          options: [
+            {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--stack", "-s"],
+              description:
+                "The name of the stack to operate on. Defaults to the current stack",
+              args: [{ name: "stack" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
           ],
         },
       ],
       options: [
+        {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
         {
           name: ["--show-ids", "-i"],
           description: "Display each resource's provider-assigned unique ID",
@@ -1146,6 +4428,63 @@ const completionSpec: Fig.Spec = {
           description: "Deletes a resource from a stack's state",
           options: [
             {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
+            {
               name: ["--force"],
               description: "Force deletion of protected resources",
             },
@@ -1163,6 +4502,63 @@ const completionSpec: Fig.Spec = {
           description: "Unprotect resources in a stack's state",
           options: [
             {
+              name: ["--color"],
+              description:
+                "Colorize output. Choices are: always, never, raw, auto",
+              args: [{ name: "color", default: "auto" }],
+            },
+            {
+              name: ["--cwd", "-C"],
+              description:
+                "Run pulumi as if it had been started in another directory",
+              args: [{ name: "cwd" }],
+            },
+            {
+              name: ["--disable-integrity-checking"],
+              description: "Disable integrity checking of checkpoint files",
+            },
+            {
+              name: ["--emoji", "-e"],
+              description: "Enable emojis in the output",
+            },
+            {
+              name: ["--logflow"],
+              description:
+                "Flow log settings to child processes (like plugins)",
+            },
+            {
+              name: ["--logtostderr"],
+              description: "Log to stderr instead of to files",
+            },
+            {
+              name: ["--non-interactive"],
+              description: "Disable interactive mode for all commands",
+            },
+            {
+              name: ["--profiling"],
+              description:
+                "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+              args: [{ name: "profiling" }],
+            },
+            {
+              name: ["--tracing"],
+              description:
+                "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+              args: [{ name: "tracing" }],
+            },
+            {
+              name: ["--tracing-header"],
+              description:
+                "Include the tracing header with the given contents.",
+              args: [{ name: "tracing-header" }],
+            },
+            {
+              name: ["--verbose", "-v"],
+              description:
+                "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+              args: [{ name: "verbose", default: "0" }],
+            },
+            {
               name: ["--all"],
               description: "Unprotect all resources in the checkpoint",
             },
@@ -1176,11 +4572,115 @@ const completionSpec: Fig.Spec = {
           ],
         },
       ],
+      options: [
+        {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
+      ],
     },
     {
       name: ["update", "up"],
       description: "Create or update the resources in a stack",
       options: [
+        {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
         {
           name: ["--client"],
           description:
@@ -1335,11 +4835,180 @@ const completionSpec: Fig.Spec = {
         },
       ],
     },
-    { name: ["version"], description: "Print Pulumi's version number" },
+    {
+      name: ["version"],
+      description: "Print Pulumi's version number",
+      options: [
+        {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
+      ],
+    },
+    {
+      name: ["view-trace"],
+      description: "Display a trace from the Pulumi CLI",
+      options: [
+        {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
+        {
+          name: ["--port"],
+          description: "the port the trace viewer will listen on",
+          args: [{ name: "port", default: "8008" }],
+        },
+      ],
+    },
     {
       name: ["watch"],
       description: "[PREVIEW] Continuously update the resources in a stack",
       options: [
+        {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
         {
           name: ["--config", "-c"],
           description: "Config to use during the update",
@@ -1430,7 +5099,63 @@ const completionSpec: Fig.Spec = {
         },
       ],
     },
-    { name: ["whoami"], description: "Display the current logged-in user" },
+    {
+      name: ["whoami"],
+      description: "Display the current logged-in user",
+      options: [
+        {
+          name: ["--color"],
+          description: "Colorize output. Choices are: always, never, raw, auto",
+          args: [{ name: "color", default: "auto" }],
+        },
+        {
+          name: ["--cwd", "-C"],
+          description:
+            "Run pulumi as if it had been started in another directory",
+          args: [{ name: "cwd" }],
+        },
+        {
+          name: ["--disable-integrity-checking"],
+          description: "Disable integrity checking of checkpoint files",
+        },
+        { name: ["--emoji", "-e"], description: "Enable emojis in the output" },
+        {
+          name: ["--logflow"],
+          description: "Flow log settings to child processes (like plugins)",
+        },
+        {
+          name: ["--logtostderr"],
+          description: "Log to stderr instead of to files",
+        },
+        {
+          name: ["--non-interactive"],
+          description: "Disable interactive mode for all commands",
+        },
+        {
+          name: ["--profiling"],
+          description:
+            "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively",
+          args: [{ name: "profiling" }],
+        },
+        {
+          name: ["--tracing"],
+          description:
+            "Emit tracing to the specified endpoint. Use the `file:` scheme to write tracing data to a local file",
+          args: [{ name: "tracing" }],
+        },
+        {
+          name: ["--tracing-header"],
+          description: "Include the tracing header with the given contents.",
+          args: [{ name: "tracing-header" }],
+        },
+        {
+          name: ["--verbose", "-v"],
+          description:
+            "Enable verbose logging (e.g., v=3); anything >3 is very verbose",
+          args: [{ name: "verbose", default: "0" }],
+        },
+      ],
+    },
   ],
   options: [
     {
