@@ -10,7 +10,7 @@ replace (
 require (
 	cloud.google.com/go/logging v1.0.0
 	cloud.google.com/go/storage v1.15.0
-	github.com/EthanOrlander/genFigSpec v0.0.0-20210826010157-1676becced99
+	github.com/EthanOrlander/genFigSpec v0.0.0-20210826140221-b47e0d533c01
 	github.com/aws/aws-sdk-go v1.38.35
 	github.com/blang/semver v3.5.1+incompatible
 	github.com/djherbis/times v1.2.0
@@ -60,5 +60,3 @@ require (
 	sourcegraph.com/sourcegraph/appdash v0.0.0-20190731080439-ebfcffb1b5c0
 	sourcegraph.com/sourcegraph/appdash-data v0.0.0-20151005221446-73f23eafcf67 // indirect
 )
-
-replace github.com/EthanOrlander/genFigSpec => ../../cobra-fig-plugin/gen-fig-spec
