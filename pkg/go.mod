@@ -10,7 +10,7 @@ replace (
 require (
 	cloud.google.com/go/logging v1.0.0
 	cloud.google.com/go/storage v1.15.0
-	github.com/EthanOrlander/genFigSpec v0.0.0-20210826140221-b47e0d533c01
+	github.com/EthanOrlander/genFigSpec v0.0.0-20210827051750-fdb53d22a9a1
 	github.com/aws/aws-sdk-go v1.38.35
 	github.com/blang/semver v3.5.1+incompatible
 	github.com/djherbis/times v1.2.0
